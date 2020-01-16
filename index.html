@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Notification Dropdown</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		var data = [
+			{
+				"id": "1321",
+				"type": "text",
+				"title": "Test notification",
+				"text": "Test text notification",
+				"expires": "3600"
+			},
+			{
+				"id": "4322",
+				"type": "bonus",
+				"title": "You win a bonus!",
+				"requirement": "Deposit $50 to win",
+				"expires": "3600"
+			},
+			{
+				"id": "5453",
+				"type": "Promotion",
+				"image": "https=>\/\/www.freeiconspng.com\/uploads\/leistungen-promotion-icon-png-0.png",
+				"title": "%30 off on sports betting",
+				"link": "https=>\/\/www.google.com\/"
+			},
+			{
+				"id": "5236",
+				"type": "text",
+				"title": "Test notification",
+				"text": "Test text notification",
+				"expires": "5"
+			}
+		];
+
+
+		$(document).ready(function(){
+			$.each(data, function (key, val) {
+				$('.dropdown').append('<div class="notify_item">' +
+						'<div class="notify_info">' +
+						'<p>' + val.id +  '</p>' +
+						'<p>' + val.text +  '</p>' +
+						'</div>' +
+						'</div>');
+
+				console.log(val);
+			});
+
+			$(".notification_icon .fa-bell").click(function(){
+				$(".dropdown").toggleClass("active");
+			})
+		});
+	</script>
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="notification_wrap">
+		<div class="notification_icon">
+			<i class="fas fa-bell"></i>
+		</div>
+		<div class="dropdown">
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
